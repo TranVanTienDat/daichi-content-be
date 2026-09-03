@@ -1,0 +1,47 @@
+{
+  "collectionName": "components_navigation_navigations",
+  "info": {
+    "displayName": "navigation"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "link": {
+      "type": "text"
+    },
+    "enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "isSingleLink": {
+      "type": "boolean",
+      "default": true
+    },
+    "color": {
+      "type": "customField",
+      "customField": "plugin::color-picker.color",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+    },
+    "subNav": {
+      "type": "component",
+      "component": "navigation.sub-nav",
+      "repeatable": true
+    },
+    "badge": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

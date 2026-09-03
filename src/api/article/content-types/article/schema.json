@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "article"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    },
+    "title": {
+      "type": "text"
+    },
+    "slug": {
+      "type": "text",
+      "regex": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "content": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

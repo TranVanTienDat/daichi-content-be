@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_contacts",
+  "info": {
+    "displayName": "contact"
+  },
+  "options": {},
+  "attributes": {
+    "contact": {
+      "type": "component",
+      "component": "shared.contact-channels",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

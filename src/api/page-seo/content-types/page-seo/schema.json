@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "page_seos",
+  "info": {
+    "singularName": "page-seo",
+    "pluralName": "page-seos",
+    "displayName": "pageSeo"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    },
+    "slug": {
+      "type": "string",
+      "regex": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "title": {
+      "type": "text"
+    },
+    "content": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    }
+  }
+}

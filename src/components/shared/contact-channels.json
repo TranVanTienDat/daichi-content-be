@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_contact_channels",
+  "info": {
+    "displayName": "contactChannels"
+  },
+  "options": {},
+  "attributes": {
+    "channelType": {
+      "type": "enumeration",
+      "enum": [
+        "phone",
+        "zalo",
+        "messenger",
+        "email",
+        "map"
+      ]
+    },
+    "value": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "link": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

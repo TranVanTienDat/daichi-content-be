@@ -18,6 +18,9 @@ const config = ({
       },
     },
   },
+  seo: {
+    enabled: true,
+  },
 });
 
 export default config;

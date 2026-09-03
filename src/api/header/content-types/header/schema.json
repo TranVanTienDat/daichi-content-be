@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "headers",
+  "info": {
+    "singularName": "header",
+    "pluralName": "headers",
+    "displayName": "header"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nav": {
+      "type": "component",
+      "component": "navigation.navigation",
+      "repeatable": true
+    }
+  }
+}

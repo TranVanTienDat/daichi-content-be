@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_navigation_sub_navs",
+  "info": {
+    "displayName": "subNav"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "link": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

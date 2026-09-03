@@ -1,9 +1,9 @@
-import type { StrapiApp } from '@strapi/strapi/admin';
+import type { StrapiApp } from "@strapi/strapi/admin";
 import {
   defaultHtmlPreset,
   defaultTheme,
   setPluginConfig,
-} from '@_sh/strapi-plugin-ckeditor';
+} from "@_sh/strapi-plugin-ckeditor";
 
 export default {
   register() {

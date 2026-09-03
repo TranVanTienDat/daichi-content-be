@@ -9,32 +9,30 @@ const config: Core.Config.Middlewares = [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          "connect-src": [
+          "script-src": [
             "'self'",
-            "https:",
-            "apollo-server-landing-page.cdn.apollographql.com",
-            "sandbox.embed.apollographql.com",
+            "'unsafe-inline'",
+            "editor.unlayer.com",
+            "res.cloudinary.com",
           ],
+          "frame-src": ["'self'", "editor.unlayer.com"],
+          "connect-src": ["'self'", "https:"],
           "img-src": [
             "'self'",
             "data:",
             "blob:",
-            "apollo-server-landing-page.cdn.apollographql.com",
+            "market-assets.strapi.io",
+            "res.cloudinary.com",
           ],
-          "script-src": [
+          "media-src": [
             "'self'",
-            "'unsafe-inline'",
-            "apollo-server-landing-page.cdn.apollographql.com",
+            "data:",
+            "blob:",
+            "market-assets.strapi.io",
+            "res.cloudinary.com",
           ],
-          "style-src": [
-            "'self'",
-            "'unsafe-inline'",
-            "apollo-server-landing-page.cdn.apollographql.com",
-          ],
-          "frame-src": ["sandbox.embed.apollographql.com"],
-          "manifest-src": ["apollo-server-landing-page.cdn.apollographql.com"],
+          upgradeInsecureRequests: null,
         },
-
       },
     },
   },
@@ -48,4 +46,3 @@ const config: Core.Config.Middlewares = [
 ];
 
 export default config;
-
