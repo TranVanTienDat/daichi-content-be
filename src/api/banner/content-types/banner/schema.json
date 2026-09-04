@@ -50,6 +50,9 @@
     },
     "position": {
       "type": "string"
+    },
+    "subTitle": {
+      "type": "text"
     }
   }
 }

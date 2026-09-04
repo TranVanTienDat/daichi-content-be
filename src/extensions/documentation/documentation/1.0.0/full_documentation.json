@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2026-09-03T15:34:00.968Z"
+    "x-generation-date": "2026-09-04T15:57:33.193Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -5820,6 +5820,9 @@
               "position": {
                 "type": "string"
               },
+              "subTitle": {
+                "type": "string"
+              },
               "locale": {
                 "type": "string"
               },
@@ -7037,6 +7040,9 @@
           "position": {
             "type": "string"
           },
+          "subTitle": {
+            "type": "string"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -7302,6 +7308,9 @@
                 "position": {
                   "type": "string"
                 },
+                "subTitle": {
+                  "type": "string"
+                },
                 "createdAt": {
                   "type": "string",
                   "format": "date-time"
@@ -7408,6 +7417,12 @@
               "seo": {
                 "$ref": "#/components/schemas/SharedSeoComponent"
               },
+              "consultants": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SharedConsultantComponent"
+                }
+              },
               "locale": {
                 "type": "string"
               },
@@ -7489,6 +7504,12 @@
           "seo": {
             "$ref": "#/components/schemas/SharedSeoComponent"
           },
+          "consultants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SharedConsultantComponent"
+            }
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -7566,6 +7587,12 @@
                 },
                 "seo": {
                   "$ref": "#/components/schemas/SharedSeoComponent"
+                },
+                "consultants": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SharedConsultantComponent"
+                  }
                 },
                 "createdAt": {
                   "type": "string",
@@ -7707,6 +7734,39 @@
             "items": {
               "$ref": "#/components/schemas/SharedContactChannelsComponent"
             }
+          }
+        }
+      },
+      "SharedConsultantComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              }
+            ]
+          },
+          "fullName": {
+            "type": "string"
+          },
+          "position": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "contact": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SharedContactComponent"
+            }
+          },
+          "philosophy": {
+            "type": "string"
           }
         }
       },

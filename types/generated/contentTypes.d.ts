@@ -514,6 +514,7 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
     position: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     starting_price: Schema.Attribute.String;
+    subTitle: Schema.Attribute.Text;
     title: Schema.Attribute.RichText &
       Schema.Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
@@ -538,6 +539,7 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
+    consultants: Schema.Attribute.Component<'shared.consultant', true>;
     contactLink: Schema.Attribute.Component<'shared.contact', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

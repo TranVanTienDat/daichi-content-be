@@ -29,6 +29,20 @@ export interface NavigationSubNav extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedConsultant extends Struct.ComponentSchema {
+  collectionName: 'components_shared_consultants';
+  info: {
+    displayName: ' consultant';
+  };
+  attributes: {
+    code: Schema.Attribute.String;
+    contact: Schema.Attribute.Component<'shared.contact', true>;
+    fullName: Schema.Attribute.String;
+    philosophy: Schema.Attribute.Text;
+    position: Schema.Attribute.String;
+  };
+}
+
 export interface SharedContact extends Struct.ComponentSchema {
   collectionName: 'components_shared_contacts';
   info: {
@@ -110,6 +124,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'navigation.navigation': NavigationNavigation;
       'navigation.sub-nav': NavigationSubNav;
+      'shared.consultant': SharedConsultant;
       'shared.contact': SharedContact;
       'shared.contact-channels': SharedContactChannels;
       'shared.open-graph': SharedOpenGraph;

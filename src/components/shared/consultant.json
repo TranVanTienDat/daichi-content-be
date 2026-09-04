@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_consultants",
+  "info": {
+    "displayName": " consultant"
+  },
+  "options": {},
+  "attributes": {
+    "fullName": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    },
+    "contact": {
+      "type": "component",
+      "component": "shared.contact",
+      "repeatable": true
+    },
+    "philosophy": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
