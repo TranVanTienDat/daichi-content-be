@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_shared_bannners",
+  "info": {
+    "displayName": "bannner"
+  },
+  "options": {},
+  "attributes": {
+    "titile": {
+      "type": "text"
+    },
+    "subTitle": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "file": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ]
+    }
+  },
+  "config": {}
+}

@@ -24,8 +24,23 @@ export interface NavigationSubNav extends Struct.ComponentSchema {
     displayName: 'subNav';
   };
   attributes: {
+    json: Schema.Attribute.JSON;
     label: Schema.Attribute.String;
     link: Schema.Attribute.Text;
+  };
+}
+
+export interface SharedBannner extends Struct.ComponentSchema {
+  collectionName: 'components_shared_bannners';
+  info: {
+    displayName: 'bannner';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    file: Schema.Attribute.Media<'files'>;
+    media: Schema.Attribute.Media<'images' | 'videos'>;
+    subTitle: Schema.Attribute.Text;
+    titile: Schema.Attribute.Text;
   };
 }
 
@@ -124,6 +139,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'navigation.navigation': NavigationNavigation;
       'navigation.sub-nav': NavigationSubNav;
+      'shared.bannner': SharedBannner;
       'shared.consultant': SharedConsultant;
       'shared.contact': SharedContact;
       'shared.contact-channels': SharedContactChannels;

@@ -586,6 +586,34 @@ export interface ApiHeaderHeader extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiLayoutLayout extends Struct.CollectionTypeSchema {
+  collectionName: 'layouts';
+  info: {
+    displayName: 'layout';
+    pluralName: 'layouts';
+    singularName: 'layout';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::layout.layout'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPageSeoPageSeo extends Struct.CollectionTypeSchema {
   collectionName: 'page_seos';
   info: {
@@ -1210,6 +1238,7 @@ declare module '@strapi/strapi' {
       'api::banner.banner': ApiBannerBanner;
       'api::contact.contact': ApiContactContact;
       'api::header.header': ApiHeaderHeader;
+      'api::layout.layout': ApiLayoutLayout;
       'api::page-seo.page-seo': ApiPageSeoPageSeo;
       'api::product.product': ApiProductProduct;
       'api::registrant.registrant': ApiRegistrantRegistrant;

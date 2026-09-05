@@ -10,6 +10,9 @@
     },
     "link": {
       "type": "text"
+    },
+    "json": {
+      "type": "json"
     }
   },
   "config": {}
