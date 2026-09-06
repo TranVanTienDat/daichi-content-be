@@ -72,6 +72,11 @@
       "relation": "manyToOne",
       "target": "api::product.product",
       "inversedBy": "related"
+    },
+    "banner": {
+      "type": "component",
+      "component": "shared.bannner",
+      "repeatable": false
     }
   }
 }
