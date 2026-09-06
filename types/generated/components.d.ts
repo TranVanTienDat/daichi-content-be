@@ -51,8 +51,9 @@ export interface SharedConsultant extends Struct.ComponentSchema {
   };
   attributes: {
     code: Schema.Attribute.String;
-    contact: Schema.Attribute.Component<'shared.contact', true>;
+    contact: Schema.Attribute.Component<'shared.contact', false>;
     fullName: Schema.Attribute.String;
+    info: Schema.Attribute.JSON;
     philosophy: Schema.Attribute.Text;
     position: Schema.Attribute.String;
   };

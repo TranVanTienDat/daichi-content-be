@@ -17,10 +17,13 @@
     "contact": {
       "type": "component",
       "component": "shared.contact",
-      "repeatable": true
+      "repeatable": false
     },
     "philosophy": {
       "type": "text"
+    },
+    "info": {
+      "type": "json"
     }
   },
   "config": {}
