@@ -77,6 +77,9 @@
       "type": "component",
       "component": "shared.bannner",
       "repeatable": false
+    },
+    "product_type": {
+      "type": "string"
     }
   }
 }
