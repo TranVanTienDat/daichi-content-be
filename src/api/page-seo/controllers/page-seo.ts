@@ -8,7 +8,7 @@ export default factories.createCoreController('api::page-seo.page-seo', ({ strap
   async findBySlug(ctx) {
     const { slug } = ctx.params;
 
-    const document = await strapi.service('api::page-seo.page-seo').findBySlug(slug);
+    const document = await strapi.service('api::page-seo.page-seo').findBySlug(slug, ctx.query);
 
     if (!document) {
       return ctx.notFound('Không tìm thấy page-seo');
