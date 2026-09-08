@@ -80,6 +80,14 @@
     },
     "product_type": {
       "type": "string"
+    },
+    "classification": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "main",
+        "included"
+      ]
     }
   }
 }

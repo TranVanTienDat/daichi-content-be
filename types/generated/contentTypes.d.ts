@@ -700,6 +700,8 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       'manyToOne',
       'api::product-category.product-category'
     >;
+    classification: Schema.Attribute.Enumeration<['main', 'included']> &
+      Schema.Attribute.Required;
     content: Schema.Attribute.RichText &
       Schema.Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',

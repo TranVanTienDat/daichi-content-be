@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2026-09-07T13:45:33.056Z"
+    "x-generation-date": "2026-09-08T08:22:37.307Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -11414,6 +11414,9 @@
         ],
         "properties": {
           "data": {
+            "required": [
+              "classification"
+            ],
             "type": "object",
             "properties": {
               "seo": {
@@ -11490,6 +11493,13 @@
               "product_type": {
                 "type": "string"
               },
+              "classification": {
+                "type": "string",
+                "enum": [
+                  "main",
+                  "included"
+                ]
+              },
               "locale": {
                 "type": "string"
               },
@@ -11548,6 +11558,9 @@
       },
       "Product": {
         "type": "object",
+        "required": [
+          "classification"
+        ],
         "properties": {
           "id": {
             "oneOf": [
@@ -12048,6 +12061,13 @@
                     "product_type": {
                       "type": "string"
                     },
+                    "classification": {
+                      "type": "string",
+                      "enum": [
+                        "main",
+                        "included"
+                      ]
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -12244,6 +12264,13 @@
           },
           "product_type": {
             "type": "string"
+          },
+          "classification": {
+            "type": "string",
+            "enum": [
+              "main",
+              "included"
+            ]
           },
           "createdAt": {
             "type": "string",
@@ -13185,6 +13212,13 @@
                 },
                 "product_type": {
                   "type": "string"
+                },
+                "classification": {
+                  "type": "string",
+                  "enum": [
+                    "main",
+                    "included"
+                  ]
                 },
                 "createdAt": {
                   "type": "string",
