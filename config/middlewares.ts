@@ -36,12 +36,17 @@ const config: Core.Config.Middlewares = [
       },
     },
   },
+  {
+    name: "strapi::favicon",
+    config: {
+      path: "public/logolb.jpg",
+    },
+  },
   "strapi::cors",
   "strapi::poweredBy",
   "strapi::query",
   "strapi::body",
   "strapi::session",
-  "strapi::favicon",
   "strapi::public",
 ];
 
