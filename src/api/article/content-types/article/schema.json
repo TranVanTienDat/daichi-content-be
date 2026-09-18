@@ -39,6 +39,13 @@
         "videos",
         "audios"
       ]
+    },
+    "onTop": {
+      "type": "enumeration",
+      "enum": [
+        "main",
+        "secondary"
+      ]
     }
   }
 }
