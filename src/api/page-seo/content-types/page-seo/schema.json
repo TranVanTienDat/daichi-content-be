@@ -29,6 +29,11 @@
       "options": {
         "preset": "defaultHtml"
       }
+    },
+    "banners": {
+      "type": "component",
+      "component": "shared.bannner",
+      "repeatable": true
     }
   }
 }

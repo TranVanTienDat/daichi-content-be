@@ -625,6 +625,7 @@ export interface ApiPageSeoPageSeo extends Struct.CollectionTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
+    banners: Schema.Attribute.Component<'shared.bannner', true>;
     content: Schema.Attribute.RichText &
       Schema.Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
