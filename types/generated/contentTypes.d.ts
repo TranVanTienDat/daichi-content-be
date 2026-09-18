@@ -476,7 +476,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     onTop: Schema.Attribute.Enumeration<['main', 'secondary']>;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'shared.seo', false>;
-    slug: Schema.Attribute.Text;
+    slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
