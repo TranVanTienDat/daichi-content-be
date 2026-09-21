@@ -29,11 +29,13 @@ export default factories.createCoreService(
       pageSize = 12,
       search = "",
       sort = "createdAt:desc",
+      populate = {},
     }: {
       page: number;
       pageSize: number;
       search: string;
       sort: string;
+      populate: any;
     }) {
       const contentType = strapi.contentType("api::article.article");
       const [sortField, sortOrder] = sort.split(":");
@@ -64,6 +66,7 @@ export default factories.createCoreService(
         filters,
         sort: { [sortField || "createdAt"]: sortOrder || "desc" },
         start: (page - 1) * pageSize,
+        populate,
         limit: pageSize,
       };
 
