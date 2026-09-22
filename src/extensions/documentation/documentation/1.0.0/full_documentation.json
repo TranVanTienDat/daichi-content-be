@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2026-09-21T13:35:23.799Z"
+    "x-generation-date": "2026-09-22T04:44:21.886Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -11869,7 +11869,7 @@
               "description": {
                 "type": "string"
               },
-              "related": {
+              "relateds": {
                 "type": "array",
                 "items": {
                   "oneOf": [
@@ -11882,17 +11882,6 @@
                   ],
                   "example": "string or id"
                 }
-              },
-              "products": {
-                "oneOf": [
-                  {
-                    "type": "integer"
-                  },
-                  {
-                    "type": "string"
-                  }
-                ],
-                "example": "string or id"
               },
               "banner": {
                 "$ref": "#/components/schemas/SharedBannnerComponent"
@@ -12423,7 +12412,7 @@
                     "description": {
                       "type": "string"
                     },
-                    "related": {
+                    "relateds": {
                       "type": "array",
                       "items": {
                         "type": "object",
@@ -12441,24 +12430,6 @@
                           "documentId": {
                             "type": "string"
                           }
-                        }
-                      }
-                    },
-                    "products": {
-                      "type": "object",
-                      "properties": {
-                        "id": {
-                          "oneOf": [
-                            {
-                              "type": "string"
-                            },
-                            {
-                              "type": "number"
-                            }
-                          ]
-                        },
-                        "documentId": {
-                          "type": "string"
                         }
                       }
                     },
@@ -12627,7 +12598,7 @@
           "description": {
             "type": "string"
           },
-          "related": {
+          "relateds": {
             "type": "array",
             "items": {
               "type": "object",
@@ -12645,24 +12616,6 @@
                 "documentId": {
                   "type": "string"
                 }
-              }
-            }
-          },
-          "products": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "oneOf": [
-                  {
-                    "type": "string"
-                  },
-                  {
-                    "type": "number"
-                  }
-                ]
-              },
-              "documentId": {
-                "type": "string"
               }
             }
           },
@@ -13207,7 +13160,7 @@
                 "description": {
                   "type": "string"
                 },
-                "related": {
+                "relateds": {
                   "type": "array",
                   "items": {
                     "type": "object",
@@ -13225,24 +13178,6 @@
                       "documentId": {
                         "type": "string"
                       }
-                    }
-                  }
-                },
-                "products": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "oneOf": [
-                        {
-                          "type": "string"
-                        },
-                        {
-                          "type": "number"
-                        }
-                      ]
-                    },
-                    "documentId": {
-                      "type": "string"
                     }
                   }
                 },

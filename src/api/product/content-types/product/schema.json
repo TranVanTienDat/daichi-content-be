@@ -61,17 +61,10 @@
         "preset": "defaultHtml"
       }
     },
-    "related": {
+    "relateds": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::product.product",
-      "mappedBy": "products"
-    },
-    "products": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::product.product",
-      "inversedBy": "related"
+      "target": "api::product.product"
     },
     "banner": {
       "type": "component",

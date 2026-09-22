@@ -733,9 +733,8 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     name: Schema.Attribute.Text;
     product_type: Schema.Attribute.String;
-    products: Schema.Attribute.Relation<'manyToOne', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
-    related: Schema.Attribute.Relation<'oneToMany', 'api::product.product'>;
+    relateds: Schema.Attribute.Relation<'oneToMany', 'api::product.product'>;
     seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'name'>;
     tag: Schema.Attribute.String;
