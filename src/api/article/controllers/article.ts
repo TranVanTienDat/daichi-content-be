@@ -16,13 +16,26 @@ export default factories.createCoreController(
     },
 
     async findOtherArticles(ctx) {
-      const { page, pageSize, search, sort, populate } = ctx.query;
+      const {
+        pagination,
+        search,
+        sort,
+        populate,
+      }: {
+        pagination?: {
+          page?: string;
+          pageSize?: string;
+        };
+        search?: string;
+        sort?: string;
+        populate?: any;
+      } = ctx.query;
 
       const result = await strapi
         .service("api::article.article")
         .findOtherArticles({
-          page: page ? Number(page) : 1,
-          pageSize: pageSize ? Number(pageSize) : 10,
+          page: pagination?.page ? Number(pagination.page) : 1,
+          pageSize: pagination?.pageSize ? Number(pagination.pageSize) : 10,
           search: typeof search === "string" ? search : "",
           sort: typeof sort === "string" ? sort : "createdAt:desc",
           populate,
