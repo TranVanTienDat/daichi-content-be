@@ -11,12 +11,20 @@ export default factories.createCoreService('api::page-seo.page-seo', ({ strapi }
     const sanitizedQuery = await strapi.contentAPI.sanitize.query(query, contentType);
 
     return strapi.documents('api::page-seo.page-seo').findFirst({
+      ...sanitizedQuery,
       filters: {
         slug: {
           $eq: slug,
         },
       },
-      ...sanitizedQuery,
+      populate: {
+        seo: {
+          populate: '*',
+        },
+        banners: {
+          populate: '*',
+        },
+      },
     });
   },
 }));
