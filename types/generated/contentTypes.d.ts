@@ -724,6 +724,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
           preset: 'defaultHtml';
         }
       >;
+    documents: Schema.Attribute.Component<'shared.files', true>;
     isFeatured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<

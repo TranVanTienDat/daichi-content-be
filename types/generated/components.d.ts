@@ -84,6 +84,16 @@ export interface SharedContactChannels extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedFiles extends Struct.ComponentSchema {
+  collectionName: 'components_shared_files';
+  info: {
+    displayName: 'files';
+  };
+  attributes: {
+    file: Schema.Attribute.Media<'images' | 'files'>;
+  };
+}
+
 export interface SharedOpenGraph extends Struct.ComponentSchema {
   collectionName: 'components_shared_open_graphs';
   info: {
@@ -144,6 +154,7 @@ declare module '@strapi/strapi' {
       'shared.consultant': SharedConsultant;
       'shared.contact': SharedContact;
       'shared.contact-channels': SharedContactChannels;
+      'shared.files': SharedFiles;
       'shared.open-graph': SharedOpenGraph;
       'shared.seo': SharedSeo;
     }

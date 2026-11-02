@@ -81,6 +81,11 @@
         "main",
         "included"
       ]
+    },
+    "documents": {
+      "type": "component",
+      "component": "shared.files",
+      "repeatable": true
     }
   }
 }
