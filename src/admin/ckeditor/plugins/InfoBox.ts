@@ -9,7 +9,7 @@ import blockIcon from "./info-box.svg?raw";
 
 type BlockContent = {
   name: string;
-  pageSize: number;
+  pageSize: string;
   api: string;
 };
 
@@ -23,14 +23,14 @@ class InsertBlockContentCommand extends Command {
     model.change((writer) => {
       const blockContent = writer.createElement("blockContent", {
         blockName: block.name,
-        blockPageSize: String(block.pageSize),
+        blockPageSize: block.pageSize,
         blockApi: block.api,
       });
       model.insertObject(
         blockContent,
         selection ?? model.document.selection,
         null,
-        { findOptimalPosition: "auto" }
+        { findOptimalPosition: "auto" },
       );
       const positionAfterBlock = writer.createPositionAfter(blockContent);
       const paragraph = writer.createElement("paragraph");
@@ -67,7 +67,8 @@ export default class InfoBox extends Plugin {
         const viewElement = writer.createContainerElement("div", {
           class: "block-content-id",
           "data-block-name": modelElement.getAttribute("blockName") ?? "",
-          "data-block-page-size": modelElement.getAttribute("blockPageSize") ?? "",
+          "data-block-page-size":
+            modelElement.getAttribute("blockPageSize") ?? "",
           "data-block-api": modelElement.getAttribute("blockApi") ?? "",
         });
         writer.insert(
@@ -77,8 +78,9 @@ export default class InfoBox extends Plugin {
             alt: modelElement.getAttribute("blockName") ?? "Block content",
             width: BLOCK_ICON_SIZE,
             height: BLOCK_ICON_SIZE,
-            style: "width: 24px; height: 24px; object-fit: contain; vertical-align: middle;",
-          })
+            style:
+              "width: 24px; height: 24px; object-fit: contain; vertical-align: middle;",
+          }),
         );
         return viewElement;
       },
@@ -89,7 +91,8 @@ export default class InfoBox extends Plugin {
         const viewElement = writer.createContainerElement("div", {
           class: "block-content-id",
           "data-block-name": modelElement.getAttribute("blockName") ?? "",
-          "data-block-page-size": modelElement.getAttribute("blockPageSize") ?? "",
+          "data-block-page-size":
+            modelElement.getAttribute("blockPageSize") ?? "",
           "data-block-api": modelElement.getAttribute("blockApi") ?? "",
           title: `${modelElement.getAttribute("blockName") ?? ""}, ${modelElement.getAttribute("blockPageSize") ?? ""}, ${modelElement.getAttribute("blockApi") ?? ""}`,
         });
@@ -100,8 +103,9 @@ export default class InfoBox extends Plugin {
             alt: modelElement.getAttribute("blockName") ?? "Block content",
             width: BLOCK_ICON_SIZE,
             height: BLOCK_ICON_SIZE,
-            style: "width: 24px; height: 24px; object-fit: contain; vertical-align: middle;",
-          })
+            style:
+              "width: 24px; height: 24px; object-fit: contain; vertical-align: middle;",
+          }),
         );
         return toWidget(viewElement, writer, {
           label: "Block content",
@@ -111,7 +115,7 @@ export default class InfoBox extends Plugin {
 
     editor.commands.add(
       "insertBlockContent",
-      new InsertBlockContentCommand(editor)
+      new InsertBlockContentCommand(editor),
     );
 
     editor.ui.componentFactory.add("infoBox", (locale) => {
@@ -119,37 +123,39 @@ export default class InfoBox extends Plugin {
       let savedSelection: ModelSelection | undefined;
 
       button.label = "Block content";
-      button.tooltip = "Nhập: name, pageSize, api";
+      button.tooltip =
+        "Nhập: tên(products, articles,..), text, danh sách document";
       button.isToggleable = false;
       button.icon = blockIcon;
 
       this.listenTo(button, "mousedown", () => {
         savedSelection = editor.model.createSelection(
-          editor.model.document.selection
+          editor.model.document.selection,
         );
       });
 
       this.listenTo(button, "execute", () => {
         const input = window.prompt(
           "Nhập theo định dạng: name, pageSize, api",
-          "content, 10, /api/content"
+          "content, 10, /api/content",
         );
         if (input === null) return;
 
         const [name, pageSizeText, api] = input
           .split(",")
           .map((part) => part.trim());
-        const pageSize = Number(pageSizeText);
 
-        if (!name || !pageSizeText || !api || !Number.isInteger(pageSize) || pageSize <= 0) {
-          window.alert("Dữ liệu không hợp lệ. Ví dụ: content, 10, /api/content");
+        if (!name || !api) {
+          window.alert(
+            "Dữ liệu không hợp lệ. Ví dụ: products, nội dung, [sdcdscd-dcssd]",
+          );
           return;
         }
 
         editor.execute(
           "insertBlockContent",
-          { name, pageSize, api },
-          savedSelection ?? editor.model.document.selection
+          { name, pageSize: pageSizeText ?? "", api },
+          savedSelection ?? editor.model.document.selection,
         );
         savedSelection = undefined;
         editor.editing.view.focus();
